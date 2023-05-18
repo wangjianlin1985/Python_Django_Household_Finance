@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/incomeType.css' %}" />
+<div id="incomeType_EditDiv">
+	<form id="incomeTypeModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">分类id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="incomeType_typeId_modify" name="incomeType.typeId" value="{{ typeId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">分类名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="incomeType_typeName_modify" name="incomeType.typeName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="incomeTypeModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/IncomeType/incomeType_modify.js' %}"></script>
